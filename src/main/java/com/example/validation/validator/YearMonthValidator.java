@@ -22,11 +22,11 @@ public class YearMonthValidator implements ConstraintValidator<YearMonth, String
 
         //yyyyMM01
         try{
-            LocalDate localDate = LocalDate.parse(value , DateTimeFormatter.ofPattern(this.pattern));
+            LocalDate localDate = LocalDate.parse(value + "01", DateTimeFormatter.ofPattern(this.pattern));
         }catch (Exception e){
             return false;
         }
 
-        return false;
+        return true;
     }
 }
